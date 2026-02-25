@@ -1,29 +1,45 @@
 package br.com.alura.screenmatch.modelo;
 
-public class serie extends titulo{
-    private int quantidadeEpisodios;
-    private float minutosPorEpisodio;
-    private float avaliacaoDosEpisodios;
-    public int getQuantidadeEpisodios() {
-        return quantidadeEpisodios;
+public class serie extends titulo {
+    private int temporadas;
+    private boolean ativa;
+    private int episodiosPorTemporada;
+    private int minutosPorEpisodio;
+
+    public int getTemporadas() {
+        return temporadas;
     }
-    public void setQuantidadeEpisodios(int quantidadeEpisodios) {
-        this.quantidadeEpisodios = quantidadeEpisodios;
+
+    public void setTemporadas(int temporadas) {
+        this.temporadas = temporadas;
     }
-    public float getMinutosPorEpisodio() {
+
+    public boolean isAtiva() {
+        return ativa;
+    }
+
+    public void setAtiva(boolean ativa) {
+        this.ativa = ativa;
+    }
+
+    public int getEpisodiosPorTemporada() {
+        return episodiosPorTemporada;
+    }
+
+    public void setEpisodiosPorTemporada(int episodiosPorTemporada) {
+        this.episodiosPorTemporada = episodiosPorTemporada;
+    }
+
+    public int getMinutosPorEpisodio() {
         return minutosPorEpisodio;
     }
-    public void setMinutosPorEpisodio(float minutosPorEpisodio) {
+
+    public void setMinutosPorEpisodio(int minutosPorEpisodio) {
         this.minutosPorEpisodio = minutosPorEpisodio;
     }
-    public float getAvaliacaoDosEpisodios() {
-        return avaliacaoDosEpisodios;
+
+    @Override
+    public int getDuracaoEmMinutos() {
+        return temporadas * episodiosPorTemporada * minutosPorEpisodio;
     }
-    public void setAvaliacaoDosEpisodios(float avaliacaoDosEpisodios) {
-        this.avaliacaoDosEpisodios = avaliacaoDosEpisodios;
-    }
-
-    
-
-
 }
